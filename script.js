@@ -45,4 +45,4 @@ console.log(comprado);
 console.log(listaDeSuper.length);
 
 // Mostrar la lista final
-console.log(listaDeSuper);
+console.log(listaDeSuper.length);
