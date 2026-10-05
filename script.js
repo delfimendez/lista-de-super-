@@ -1,11 +1,25 @@
-
 let listaDeSuper = [];
 
+// Parte I
+
+// 1. Agregar productos
 listaDeSuper[0] = "sal";
 listaDeSuper[1] = "pan";
 listaDeSuper[2] = "leche";
 listaDeSuper[3] = "arroz";
 listaDeSuper[4] = "huevos";
+
+// 2. Acceder al primer elemento
+console.log(listaDeSuper[0]);
+
+// 3. Encontrar la posición del último elemento
+let ultimoElemento = listaDeSuper.length - 1;
+
+// 4. Acceder al último elemento
+console.log(listaDeSuper[ultimoElemento]);
+
+
+// Parte II
 
 // 1. Agregar dos productos al final
 listaDeSuper.push("azúcar");
@@ -27,4 +41,8 @@ console.log(noHabia);
 let comprado = listaDeSuper.shift();
 console.log(comprado);
 
+// 6. ¿Cuán largo es el arreglo ahora?
+console.log(listaDeSuper.length);
+
+// Mostrar la lista final
 console.log(listaDeSuper);
