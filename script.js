@@ -35,13 +35,13 @@ console.log(listaDeSuper.length);
 
 // 1. Mostrar cada ítem usando un for loop
 for (let i = 0; i < listaDeSuper.length; i++) {
-    console.log(listaDeSuper[i]);
+    console.log("for - listaDeSuper: " + listaDeSuper[i]);
 }
 
 // 2. Crear la función logItems
 function logItems(arreglo) {
     arreglo.forEach(function(item) {
-        console.log(item);
+        console.log("function forEach: " + item);
     });
 }
 
@@ -51,3 +51,59 @@ logItems(listaDeSuper);
 let otraLista = ["shampoo", "jabón", "dentífrico"];
 
 logItems(otraLista);
+// SÚPER APP: MÓDULO INTERACTIVO
+
+let comando = "";
+
+while (comando !== "salir") {
+    comando = prompt(
+        'SÚPER APP\nEscribí un comando: nuevo, listar, borrar o salir'
+    );
+
+    if (comando === null) {
+        comando = "salir";
+    }
+
+    if (comando === "nuevo") {
+        let producto = prompt("¿Qué producto querés agregar?");
+
+        if (producto !== null && producto.trim() !== "") {
+            listaDeSuper.push(producto);
+            console.log("Producto agregado: " + producto);
+        } else {
+            console.log("No se agregó ningún producto.");
+        }
+
+    } else if (comando === "listar") {
+        console.log("LISTA DE SÚPER:");
+        logItems(listaDeSuper);
+
+    } else if (comando === "borrar") {
+        logItems(listaDeSuper);
+
+        let indice = prompt(
+            "Ingresá el número del producto que querés borrar:"
+        );
+
+        if (indice !== null && indice.trim() !== "") {
+            indice = Number(indice);
+
+            if (
+                Number.isInteger(indice) &&
+                indice >= 1 &&
+                indice <= listaDeSuper.length
+            ) {
+                let eliminado = listaDeSuper.splice(indice - 1, 1);
+                console.log("Producto eliminado: " + eliminado[0]);
+            } else {
+                console.log("Número de producto inválido.");
+            }
+        }
+
+    } else if (comando === "salir") {
+        console.log("Saliste de la Súper App.");
+
+    } else {
+        console.log("Comando no válido. Intentá de nuevo.");
+    }
+}
