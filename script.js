@@ -1,48 +1,53 @@
 let listaDeSuper = [];
 
-// Parte I
+// PARTE I
 
-// 1. Agregar productos
 listaDeSuper[0] = "sal";
 listaDeSuper[1] = "pan";
 listaDeSuper[2] = "leche";
 listaDeSuper[3] = "arroz";
 listaDeSuper[4] = "huevos";
 
-// 2. Acceder al primer elemento
 console.log(listaDeSuper[0]);
 
-// 3. Encontrar la posición del último elemento
 let ultimoElemento = listaDeSuper.length - 1;
-
-// 4. Acceder al último elemento
 console.log(listaDeSuper[ultimoElemento]);
 
+// PARTE II
 
-// Parte II
-
-// 1. Agregar dos productos al final
 listaDeSuper.push("azúcar");
 listaDeSuper.push("fideos");
 
-// 2. Agregar dos productos al principio
 listaDeSuper.unshift("aceite");
 listaDeSuper.unshift("queso");
 
-// 3. Determinar cuánto mide el arreglo
-let largo = listaDeSuper.length;
-console.log(largo);
+console.log(listaDeSuper.length);
 
-// 4. Sacar un producto del final
 let noHabia = listaDeSuper.pop();
 console.log(noHabia);
 
-// 5. Sacar un producto del principio
 let comprado = listaDeSuper.shift();
 console.log(comprado);
 
-// 6. ¿Cuán largo es el arreglo ahora?
 console.log(listaDeSuper.length);
 
-// Mostrar la lista final
-console.log(listaDeSuper.length);
+// PARTE III
+
+// 1. Mostrar cada ítem usando un for loop
+for (let i = 0; i < listaDeSuper.length; i++) {
+    console.log(listaDeSuper[i]);
+}
+
+// 2. Crear la función logItems
+function logItems(arreglo) {
+    arreglo.forEach(function(item) {
+        console.log(item);
+    });
+}
+
+// 3. Invocar logItems dos veces
+logItems(listaDeSuper);
+
+let otraLista = ["shampoo", "jabón", "dentífrico"];
+
+logItems(otraLista);
